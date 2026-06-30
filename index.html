@@ -4,6 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="Plamedi Oscar Koto is a Cape Town-based Systems Integrator at PLURON Studio, specialising in the Zoho ecosystem and n8n." />
+<meta name="theme-color" content="#00e5c8" />
 <title>Plamedi Oscar Koto — PLURON Studio</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
 <style>
@@ -243,7 +244,15 @@ canvas#nodes {
 .contact-intro {
   font-size: clamp(15px, 2vw, 18px); font-weight: 300;
   color: var(--muted); max-width: 460px;
-  margin-bottom: 2rem; line-height: 1.8;
+  margin-bottom: 2.5rem; line-height: 1.8;
+}
+.contact-groups { display: flex; flex-direction: column; gap: 2rem; }
+.contact-group-label {
+  font-family: 'Syne', sans-serif;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.24em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 0.85rem;
+  opacity: 0.7;
 }
 .contact-links { display: flex; gap: 0.75rem; flex-wrap: wrap; }
 .clink {
@@ -297,6 +306,7 @@ footer p { font-size: 12px; color: var(--muted); letter-spacing: 0.04em; }
   <div class="nav-inner">
     <a href="#" class="logo">PLURON <span>STUDIO</span></a>
     <ul class="nav-links">
+      <li><a href="#about">About</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -305,7 +315,7 @@ footer p { font-size: 12px; color: var(--muted); letter-spacing: 0.04em; }
 </nav>
 
 <!-- HERO -->
-<div class="wrap">
+<div class="wrap" id="about">
   <div class="hero fi">
     <p class="hero-intro">
       Plamedi Oscar Koto is a <em>Cape Town-based Systems Integrator</em> at PLURON Studio, specialising in the <em>Zoho ecosystem</em> and <em>n8n</em>. He helps growth-focused businesses break free from expensive, rigid automation tools by building <em>custom, open-source workflows</em> that connect Zoho CRM, Books, and Desk to external APIs and databases.<br><br>
@@ -425,27 +435,37 @@ footer p { font-size: 12px; color: var(--muted); letter-spacing: 0.04em; }
   <div class="wrap">
     <p class="section-label fi">Contact</p>
     <p class="contact-intro fi">If your business is ready to move beyond rigid, expensive tools — reach out. A quick conversation is where it starts.</p>
-    <div class="contact-links fi">
-      <a href="https://linkedin.com/in/plamedi-koto" class="clink" target="_blank">
-        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-        LinkedIn
-      </a>
-      <a href="https://tiktok.com/@pluron.studio" class="clink" target="_blank">
-        <svg viewBox="0 0 24 24"><path d="M9 12a4 4 0 100 8 4 4 0 000-8z"/><path d="M9 12V4h4a4 4 0 004 4"/></svg>
-        TikTok
-      </a>
-      <a href="https://wa.me/0762830378" class="clink" target="_blank">
-        <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
-        WhatsApp
-      </a>
-      <a href="mailto:plum@pluron.co.za" class="clink">
-        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        Email
-      </a>
-      <a href="https://github.com/" class="clink" target="_blank">
-        <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
-        GitHub
-      </a>
+    <div class="contact-groups fi">
+      <div>
+        <p class="contact-group-label">Project Inquiry</p>
+        <div class="contact-links">
+          <a href="mailto:plum@pluron.co.za" class="clink">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Email
+          </a>
+          <a href="https://wa.me/0762830378" class="clink" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+      <div>
+        <p class="contact-group-label">Social Media</p>
+        <div class="contact-links">
+          <a href="https://linkedin.com/in/plamedi-koto" class="clink" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+          <a href="https://github.com/" class="clink" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+            GitHub
+          </a>
+          <a href="https://tiktok.com/@pluron.studio" class="clink" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M9 12a4 4 0 100 8 4 4 0 000-8z"/><path d="M9 12V4h4a4 4 0 004 4"/></svg>
+            TikTok
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
