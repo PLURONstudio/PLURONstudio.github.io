@@ -64,6 +64,49 @@ nav {
 }
 .nav-links a:hover { color: var(--cyan); }
 
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  flex-direction: column; justify-content: center; gap: 5px;
+  background: none; border: none; cursor: pointer;
+  padding: 4px; z-index: 200;
+}
+.hamburger span {
+  display: block; width: 22px; height: 1.5px;
+  background: var(--muted);
+  transition: transform 0.25s ease, opacity 0.2s ease, background 0.2s;
+}
+.hamburger:hover span { background: var(--cyan); }
+.hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* MOBILE DRAWER */
+.mobile-drawer {
+  display: none;
+  position: fixed; inset: 0; z-index: 99;
+  background: rgba(11,11,15,0.97);
+  backdrop-filter: blur(24px);
+  flex-direction: column; align-items: center; justify-content: center;
+  gap: 2.5rem;
+}
+.mobile-drawer.open { display: flex; }
+.mobile-drawer a {
+  font-family: 'Syne', sans-serif;
+  font-size: 28px; font-weight: 800;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--muted); text-decoration: none;
+  transition: color 0.2s;
+}
+.mobile-drawer a:hover { color: var(--cyan); }
+.drawer-close {
+  position: absolute; top: 1.2rem; right: 1.5rem;
+  background: none; border: none; cursor: pointer;
+  font-size: 28px; color: var(--muted); line-height: 1;
+  transition: color 0.2s;
+}
+.drawer-close:hover { color: var(--cyan); }
+
 /* HERO */
 .hero { padding: 5rem 0 4rem; }
 
@@ -293,6 +336,7 @@ footer p { font-size: 12px; color: var(--muted); letter-spacing: 0.04em; }
 
 @media (max-width: 640px) {
   .nav-links { display: none; }
+  .hamburger { display: flex; }
   .project-item { grid-template-columns: 1fr; }
   .project-img { min-height: 160px; }
   footer { flex-direction: column; text-align: center; }
@@ -311,8 +355,20 @@ footer p { font-size: 12px; color: var(--muted); letter-spacing: 0.04em; }
       <li><a href="#services">Services</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+    <button class="hamburger" id="menuBtn" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+
+<!-- MOBILE DRAWER -->
+<div class="mobile-drawer" id="mobileDrawer">
+  <button class="drawer-close" id="drawerClose" aria-label="Close menu">✕</button>
+  <a href="#about" class="drawer-link">About</a>
+  <a href="#projects" class="drawer-link">Projects</a>
+  <a href="#services" class="drawer-link">Services</a>
+  <a href="#contact" class="drawer-link">Contact</a>
+</div>
 
 <!-- HERO -->
 <div class="wrap" id="about">
@@ -476,6 +532,16 @@ footer p { font-size: 12px; color: var(--muted); letter-spacing: 0.04em; }
 </footer>
 
 <script>
+/* HAMBURGER */
+const menuBtn = document.getElementById('menuBtn');
+const drawer = document.getElementById('mobileDrawer');
+const drawerClose = document.getElementById('drawerClose');
+function openDrawer() { drawer.classList.add('open'); menuBtn.classList.add('open'); document.body.style.overflow = 'hidden'; }
+function closeDrawer() { drawer.classList.remove('open'); menuBtn.classList.remove('open'); document.body.style.overflow = ''; }
+menuBtn.addEventListener('click', openDrawer);
+drawerClose.addEventListener('click', closeDrawer);
+drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
+
 /* FADE IN */
 const obs = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vis'); obs.unobserve(e.target); } });
