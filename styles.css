@@ -308,81 +308,48 @@ section {
   border-bottom: 1px solid rgba(26, 10, 31, 0.06);
 }
 
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-}
-
-@media (min-width: 768px) {
-  .portfolio-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.portfolio-card {
+.portfolio-coming-soon-card {
   background-color: #ffffff;
-  border-radius: 16px;
-  overflow: hidden;
+  border-radius: 20px;
+  padding: 3rem 2rem;
   border: 1px solid rgba(26, 10, 31, 0.12);
-  box-shadow: 0 6px 18px rgba(26, 10, 31, 0.05);
+  box-shadow: 0 8px 24px rgba(26, 10, 31, 0.06);
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
   display: flex;
   flex-direction: column;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  align-items: center;
 }
 
-.portfolio-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 28px rgba(26, 10, 31, 0.1);
-  border-color: rgba(26, 10, 31, 0.25);
-}
-
-.portfolio-image-container {
-  width: 100%;
-  background-color: #f1f5f9;
-  border-bottom: 1px solid rgba(26, 10, 31, 0.08);
-  aspect-ratio: 3 / 2;
-  overflow: hidden;
-}
-
-.portfolio-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.portfolio-card:hover .portfolio-img {
-  transform: scale(1.02);
-}
-
-.portfolio-content {
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-
-.portfolio-category {
-  font-size: 0.775rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
+.coming-soon-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgba(26, 10, 31, 0.06);
+  border: 1px solid rgba(26, 10, 31, 0.15);
   color: #1a0a1f;
-  margin-bottom: 0.35rem;
-  display: inline-block;
-  opacity: 0.75;
+  padding: 0.35rem 0.9rem;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-.portfolio-title {
-  font-size: 1.25rem;
-  margin-bottom: 0.6rem;
+.coming-soon-title {
+  font-size: 1.75rem;
+  color: #1a0a1f;
+  margin-bottom: 0.75rem;
 }
 
-.portfolio-desc {
-  font-size: 0.95rem;
+.coming-soon-desc {
+  font-size: 1.05rem;
   color: #4a3b52;
-  line-height: 1.5;
+  line-height: 1.6;
+  margin-bottom: 1.75rem;
+  max-width: 540px;
 }
 
 /* --------------------------------------------------------------------------
@@ -1193,4 +1160,3 @@ a.contact-value:hover {
   color: #1a0a1f;
   text-decoration: underline;
 }
-
